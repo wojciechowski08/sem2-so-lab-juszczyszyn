@@ -1,9 +1,10 @@
 from Record import Record
 from FCFS import executeFCFS
-from SJF import  executeSJF
+from SJF import executeSJF
 from SRTF import executeSRTF
 from RR import executeRR
 import copy
+from generateRecords import generate
 
 
 t1 = Record(1, 10)
@@ -19,6 +20,7 @@ t6 = Record(6, 9, 5)
 t7 = Record(7, 1, 6)
 
 l = [t1, t2, t3, t4, t5, t6, t7]
+# l = generate(10, 1, 20, 10, 0)
 
 print(*l, sep='\n')
 
@@ -33,5 +35,12 @@ print(*j, sep='\n')
 h = copy.deepcopy(l)
 executeSRTF(h)
 print(*h, sep='\n')
+
+g = copy.deepcopy(l)
+executeRR(g, 3)
+print(*g, sep='\n')
+
+
+
 
 
