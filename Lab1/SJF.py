@@ -1,15 +1,7 @@
-from Record import  Record
+from Record import Record
 
-#n = input("Enter number of processes: ")
-# bt = str(input("Enter burst times for processes: ")).split(" ")         # burst times
-# ct = []         # completion times
-# wt = []         # wait times
-# tat = []        # turn around times
-#avgWT = 0
-#avgTAT = 0
+def executeSJF(records):
 
-
-def executeFCFS(records):
     """
     :param list records:
     :return:
@@ -20,6 +12,7 @@ def executeFCFS(records):
     avgWT = 0
     avgTAT = 0
 
+
     while queueIter < len(records) or len(queue) > 0:
 
         while queueIter < len(records) and records[queueIter].AT == currentTime:
@@ -27,10 +20,14 @@ def executeFCFS(records):
             queue.insert(0, records[queueIter])
             queueIter += 1                  # dodanie procesu w czasie przybycia do kolejki
 
+            # queue.sort(reverse=True)                    # sortowanie procesow -
+
         if len(queue) > 0:
 
             actual = queue.pop()            # wybranie procesu z kolejki
             actual.timeRemaining -= 1       # -- pozostaly czas obslugiwanego procesu
+
+            queue.sort(reverse=True)        # sortowanie procesow w kolejce
 
             for i in queue:                 # ++ czas oczekujący w procesow w kolejce
                 i.WT += 1
@@ -46,24 +43,14 @@ def executeFCFS(records):
 
                 queue.append(actual)        # powrot procesu do kolejki do kontynuacji obslugiwania
 
-        currentTime += 1                    #++ jednostka czasu
+        currentTime += 1                    # ++ jednostka czasu
 
+    avgWT = avgWT / len(records)
+    avgTAT = avgTAT / len(records)
 
-    avgWT = avgWT/len(records)
-    avgTAT = avgTAT/len(records)
-
-    print("\nFirst-Come-First-Served simulation:")
+    print("\nShortest-Job-First simulation:")
 
     print("Average Waiting time: " + str(avgWT) +
           "\t\t Average Turn Around Time: " + str(avgTAT) + "\n")
-
-
-
-
-
-
-
-
-
 
 
