@@ -1,11 +1,12 @@
+from __builtin__ import raw_input
 
-bt = []
-n = int(input("Enter the number of process: "))
+bt = []                                                     # burst times
+n = int(input("Enter the number of process: "))             # number of processes
 print("Enter the burst time of the processes: \n")
-bt = list(map(int, raw_input().split()))
-waitTime = []
+bt = list(map(int, raw_input().split()))                    # burst times of enteres processes
+waitTime = []                                               # waiting times
 avgWT = 0
-turnAroundTime = []
+turnAroundTime = []                                         # wurn around times
 avgTAT = 0
 waitTime.insert(0, 0)
 turnAroundTime.insert(0, bt[0])
