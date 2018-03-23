@@ -17,7 +17,7 @@ def generate(n, btMIN, btMAX, atMAX, atMIN=0):
 
     arrivalTimes = []
 
-    for i in range(n):
+    for i in range(0, n):
         at = random.randint(atMIN, atMAX)
         arrivalTimes.append(at)
         while at in arrivalTimes:
@@ -27,3 +27,6 @@ def generate(n, btMIN, btMAX, atMAX, atMIN=0):
         records.append(r)
 
     return records
+
+# l = generate(10, 1, 10, 10, 0)
+# print(*l, sep='\n')

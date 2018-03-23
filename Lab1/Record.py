@@ -12,7 +12,7 @@ class Record:
         self.BT = burstTime
         self.WT = 0
         self.TAT = 0
-        self.timeRemaining = self.BT  # time left
+        self.timeRemaining = self.BT            # time left
 
     def setAT(self, arrivalTime):
         self.AT = arrivalTime
@@ -52,20 +52,40 @@ class Record:
             return False
 
     def __lt__(self, other):
-
-        return self.timeRemaining < other.timeRemaining
+        if self.timeRemaining == other.timeRemaining:
+            return self.AT < other.AT
+        else:
+            return self.timeRemaining < other.timeRemaining
 
     def __le__(self, other):
-
-        return self.timeRemaining <= other.timeRemaining
+        if self.timeRemaining == other.timeRemaining:
+            return self.AT <= other.AT
+        else:
+            return self.timeRemaining <= other.timeRemaining
 
     def __gt__(self, other):
-
-        return self.timeRemaining > other.timeRemaining
+        if self.timeRemaining == other.timeRemaining:
+            return self.AT > other.AT
+        else:
+            return self.timeRemaining > other.timeRemaining
 
     def __ge__(self, other):
+        if self.timeRemaining == other.timeRemaining:
+            return self.AT >= other.AT
+        else:
+            return self.timeRemaining >= other.timeRemaining
 
-        return self.timeRemaining >= other.timeRemaining
+
+
+class listRecord(list):
+    """
+
+    """
+    def __init__(self):
+
+    def sort(self):
+
+
 
 
 

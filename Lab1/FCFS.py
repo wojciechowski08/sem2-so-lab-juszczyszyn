@@ -16,16 +16,16 @@ def executeFCFS(records):
     """
     queue = []
     currentTime = 0
-    queueIter = 0
+    rIter = 0
     avgWT = 0
     avgTAT = 0
 
-    while queueIter < len(records) or len(queue) > 0:
+    while rIter < len(records) or len(queue) > 0:
 
-        while queueIter < len(records) and records[queueIter].AT == currentTime:
+        while rIter < len(records) and records[rIter].AT == currentTime:
 
-            queue.insert(0, records[queueIter])
-            queueIter += 1                  # dodanie procesu w czasie przybycia do kolejki
+            queue.insert(0, records[rIter])
+            rIter += 1                      # dodanie procesu w czasie przybycia do kolejki
 
         if len(queue) > 0:
 

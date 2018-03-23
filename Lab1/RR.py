@@ -19,7 +19,7 @@ def executeRR(records,timeQuantum):
         while rIter < len(records) and records[rIter].AT == currentTime:
 
             queue.insert(0, records[rIter])
-            rIter += 1                  # dodanie procesu w czasie przybycia do kolejki
+            rIter += 1                       # dodanie procesu w czasie przybycia do kolejki
 
         if len(queue) > 0:
 
