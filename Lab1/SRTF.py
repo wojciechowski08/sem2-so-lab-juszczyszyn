@@ -15,6 +15,7 @@ def executeSRTF(records):
 
     while rIter < len(records) or len(queue) > 0:
 
+        # queue.sort(reverse=True)  # sortowanie procesow
 
         while rIter < len(records) and records[rIter].AT == currentTime:
 

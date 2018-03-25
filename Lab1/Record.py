@@ -77,13 +77,7 @@ class Record:
 
 
 
-class listRecord(list):
-    """
 
-    """
-    def __init__(self):
-
-    def sort(self):
 
 
 
