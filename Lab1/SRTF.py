@@ -38,7 +38,7 @@ def executeSRTF(records):
                 actual.TAT = actual.WT + actual.BT
                 avgTAT += actual.TAT
                 avgWT += actual.WT          # powiekszenie ogolnego czasu oczekiwania o czas oczekiwania wykonanego procesu
-                #queue.sort(reverse=True)  # sortowanie kolejki wedlug czasu pozostalego
+                queue.sort(reverse=True)  # sortowanie kolejki wedlug czasu pozostalego
 
             else:
 
